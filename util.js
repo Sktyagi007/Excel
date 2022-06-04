@@ -7,13 +7,28 @@ function solveFormula(formula,selfCellObject){
             let{rowId,colId} = getRowIdColIdFromAddress(formulaComp);
             let cellObject = db[rowId][colId];
             let value = cellObject.value;
-            cellObject.children.push(selfCellObject.name);
+            if(selfCellObject){
+                cellObject.children.push(selfCellObject.name);
+                selfCellObject.parent.push(cellObject.name);
+            }
             // console.log(cellObject);
             formula = formula.replace(formulaComp,value);
         }
     }
     let computedValue = eval(formula);
     return computedValue;
+}
+function updateChildren(cellObject){
+    for(let i = 0; i<cellObject.children.length; i++){
+        let childName = cellObject.children[i];
+        let{rowId,colId} = getRowIdColIdFromAddress(childName);
+        let childCellObject = db[rowId][colId];
+        let newValue = solveFormula(childCellObject.formula);
+        let cellUI = document.querySelector(`div[rowid = '${rowId}'][colid = '${colId}']`);
+        cellUI.textContent = newValue;
+        childCellObject.value = newValue;
+        updateChildren(childCellObject);
+    }
 }
 function getRowIdColIdFromElement(element){
     let rowId = element.getAttribute("rowid");

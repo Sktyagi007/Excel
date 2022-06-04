@@ -35,6 +35,7 @@ for(let i = 0;i<allCells.length; i++){
         }
         cellObject.value = cellValue;
         console.log(cellObject);
+        updateChildren(cellObject);
     })
 }
 
@@ -48,6 +49,7 @@ formulaInput.addEventListener("blur",function(e){
         cellObject.value = computedValue;
         cellObject.formula = formula;
         lastSelectedCell.textContent = computedValue;
+        updateChildren(cellObject);
     }
 })
 
