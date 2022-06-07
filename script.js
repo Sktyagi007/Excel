@@ -37,6 +37,19 @@ for(let i = 0;i<allCells.length; i++){
         console.log(cellObject);
         updateChildren(cellObject);
     })
+    allCells[i].addEventListener("keydown",function(e){
+        if(e.key == "Backspace"){
+            let cell = e.target;
+            let {rowId,colId} = getRowIdColIdFromElement(cell);
+            let cellObject = db[rowId][colId];
+            if(cellObject.formula){
+                cell.formula = "";
+                formulaInput.value = "";
+                cell.textContent = "";
+                removeFormula(cellObject);
+            }
+        }
+    })
 }
 
 formulaInput.addEventListener("blur",function(e){

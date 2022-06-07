@@ -1,19 +1,23 @@
+:root{
+    --border-color:grey;
+    --cell-background:#E7E7E7;
+}
+
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-
 .menu-options{
-    height: 45px;
-    border: 0.5px solid;
-    background-color: #016C37;
+    height: 5vh;
+    background-color: #E7E7E7;
+    border-bottom: 0.5px solid var(--border-color);
 }
 .address-content{
     height: 35px;
-    border: 0.5px solid;
     display: flex;
     align-items: center;
+    background-color: white;
 }
 .cells-content{
     height:85vh;
@@ -23,34 +27,36 @@
 }
 
 .sheets{
-    height: 30px;
+    display: flex;
+    height: 5vh;
     border: 0.5px solid;
+    background-color: var(--cell-background);
 } 
 .cells{
     position: absolute;
     left: 30px;
-    top: 30px;
+    top: 25px;
 }
 .row{
     display: flex;
 }
 .cell{
-    border-bottom: 0.1px solid;
-    border-right: 0.1px solid;
-    min-height: 30px;
-    width: 100px;
+    border-bottom: 0.1px solid var(--border-color);
+    border-right: 0.1px solid var(--border-color);
+    min-height: 20px;
+    width: 75px;
     outline: none;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .top-left-cell{
-    height: 30px;
+    height: 25px;
     width: 30px;
     background-color: #E7E7E7;
     position: absolute;
-    border-bottom: 0.1px solid;
-    border-right: 0.1px solid;
+    border-bottom: 0.1px solid var(--border-color);
+    border-right: 0.1px solid var(--border-color);
     z-index: 2;
 }
 .top-row{
@@ -61,10 +67,10 @@
     z-index: 1;
 }
 .top-row-cell{
-    width: 100px;
-    height: 30px;
-    border-right: 0.1px solid;
-    border-bottom: 0.1px solid;
+    width: 75px;
+    height: 25px;
+    border-right: 0.1px solid var(--border-color);
+    border-bottom: 0.1px solid var(--border-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,17 +78,17 @@
 .left-col{
     position: absolute;
     background-color: #E7E7E7;
-    top: 30px;
+    top: 25px;
     z-index: 1;
 }
 .left-col-cell{
     width: 30px;
-    height: 30px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 0.1px solid;
-    border-right: 0.1px solid;
+    border-bottom: 0.1px solid var(--border-color);
+    border-right: 0.1px solid var(--border-color);
 }
 
 #address{
@@ -96,4 +102,36 @@
     margin-left: 1rem;
     width: 93vw;
     height: 25px;
+    outline: none;
+}
+
+.add-sheet{
+    width: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    border-right: 0.1px solid var(--border-color);
+}
+
+.sheets-list{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.sheet{
+    border-right: 0.1px solid var(--border-color);
+    width: 90px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.active-sheet{
+     background-color: white;
+     font-weight: bold;
 }
