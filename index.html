@@ -1,33 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Excel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div class="menu-options"></div>
-    <div class="address-content">
-        <input type="text" id="address" disabled>
-        <input type="text" id="formula">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div class="menu-options">
+      <div class="font-style">
+        <div class="bold"><i class="fa fa-bold"></i></div>
+        <div class="italic"><i class="fa fa-italic"></i></div>
+        <div class="underline"><i class="fa fa-underline"></i></div>
+      </div>
+      <div class="text-style">
+        <select name="font-family" id="onSelect">
+          <option class="arial">Arial</option>
+          <option class="cambria">Cambria</option>
+          <option class="georgia">Georgia</option>
+          <option class="serif">San-Serif</option>
+        </select>
+      </div>
+      <div class="font-alignment">
+        <div class="left-align"><i class="fa fa-align-left"></i></div>
+        <div class="center-align"><i class="fa fa-align-center"></i></div>
+        <div class="right-align"><i class="fa fa-align-right"></i></div>
+      </div>
+      <div class="color-style">
+        <div class="color-icon">
+          <span class="material-symbols-outlined">format_color_fill</span>
+        </div>
+      </div>
     </div>
-    
-    <div class="cells-content"></div>
-    <div class="sheets">
-        <div class="add-sheet">
-            <i class="fa fa-plus"></i>
-        </div>
-        <div class="sheets-list">
-            <div class="sheet active-sheet sheetId='0'">Sheet 1</div>
-        </div>
+    <div class="modal-color-pallet">
+      <div class="modal-colors red"></div>
+      <div class="modal-colors blue"></div>
+      <div class="modal-colors green"></div>
+      <div class="modal-colors yellow"></div>
+    </div>
+    <div class="address-content">
+      <input type="text" id="address" disabled />
+      <input type="text" id="formula" />
     </div>
 
-</body>
-<script src="./init.js"></script>
-<script src="./script.js"></script>
-<script src="./util.js"></script>
-<script src="./sheet.js"></script>
+    <div class="cells-content"></div>
+    <div class="sheets">
+      <div class="add-sheet">
+        <i class="fa fa-plus"></i>
+      </div>
+      <div class="sheets-list">
+        <div class="sheet active-sheet" sheetId="0">Sheet 1</div>
+      </div>
+    </div>
+  </body>
+  <script src="./init.js"></script>
+  <script src="./script.js"></script>
+  <script src="./util.js"></script>
+  <script src="./sheet.js"></script>
+  <script src="./menu.js"></script>
 </html>
